@@ -1,0 +1,100 @@
+
+╔══════════════════════════════════════════════════════════════════╗
+║        RAPORT – MLP AUTOENCODER – DETEKCJA ANOMALII             ║
+║        Data: 2026-04-28 20:51:19                          ║
+╚══════════════════════════════════════════════════════════════════╝
+
+
+
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+PODZIAŁ DANYCH
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+Próbki treningowe:              154224
+Próbki testowe:                  66096
+Liczba sensorów (cech):             52
+Pliki podziału:             train.txt / test.txt
+
+
+
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+METRYKI KLASYFIKACJI (zbiór testowy)
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+Próg anomalii (Threshold):  0.008187
+Średnie MSE (Test):         0.003624
+Precision (Precyzja):       0.0287
+Recall (Czułość):           0.9737
+F1-score:                   0.0558
+
+Macierz pomyłek (Test Set):
+
+                Pred: NORMAL   Pred: ANOMALIA
+True: NORMAL          63518            2502
+True: ANOMALIA            2              74
+
+TN=63518  FP=2502  FN=2  TP=74
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+CZAS PRACY
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+Przygotowanie danych:       1.8126 s
+Uczenie modelu:             11.3487 s
+Detekcja (cały zbiór test): 0.0650 s
+Czas detekcji 1 próbki:     0.0010 ms
+
+
+
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+LATENCJA (pomiar na 200 losowych próbkach)
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+Średnia latencja:           0.0668 ms
+P95 latencja:               0.0803 ms
+P99 latencja:               0.1024 ms
+Przepustowość:              1016808.43 próbek/s
+
+
+
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+PAMIĘĆ RAM
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+Zużycie RAM (system):       12032.0 MB  (49.6%)
+RAM zużyty przez model:     59.160 MB
+RAM bufora danych test:     26.726 MB
+Rozmiar całego datasetu:    89.09 MB
+Czy mieści się w pamięci:   TAK
+
+
+
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+CPU
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+Średnie użycie CPU:         14.6%
+Maksymalne użycie CPU:      15.0%
+Temperatura CPU:            niedostępna
+Throttling:                 nie wykryto
+
+
+
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+POBÓR MOCY I ENERGIA
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+Pobór mocy (idle):          niedostępny (brak RAPL)
+Pobór mocy (detekcja):      niedostępny (brak RAPL)
+Energia na 1 próbkę:        niedostępna (brak RAPL)
+Energia na 1000 próbek:     niedostępna (brak RAPL)
+
+
+
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+PLIKI WYJŚCIOWE
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+pelny_raport.txt            – ten raport
+model_weights.h             – wagi dla C++
+confusion_matrix.png        – macierz pomyłek
+train.txt / test.txt        – indeksy podziału
